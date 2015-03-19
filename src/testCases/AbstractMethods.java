@@ -58,6 +58,9 @@ public class AbstractMethods extends IOSLaunch {
 		}
 		
 	}
+	private WebElement tapElement(String xpath){
+		return driver.findElementByXPath(xpath);
+	}
 	
 	private void  takescreenshots(String xpath) throws InterruptedException {
 		
@@ -149,18 +152,18 @@ public class AbstractMethods extends IOSLaunch {
 			System.out.println("Iteration:" + i);
 			xpath = video_xpath+"["+i+"]"+"/UIAStaticText[1]";
 			System.out.println("XPATH: " +xpath);
-			String name = driver.findElementByXPath(xpath).getText();
+			WebElement ele = driver.findElementByXPath(xpath);
+			String name = ele.getText();
 			
 			if(!name.equalsIgnoreCase("ON NOW")) {
 				break;
 			
 			}
-			xpath = video_xpath+"["+i+"]"+"/UIAStaticText[3]";
+			//xpath = video_xpath+"["+i+"]"+"/UIAStaticText[3]";
 			//name = driver.findElementByXPath(xpath).getText();
-			tap(waitForElementXpath(xpath,15));
+			tap(ele);
 			//takescreenshots(xpath);
 			Thread.sleep(50000);
-			System.out.println("After sleep");
 			pressButton("btn play");
 			Thread.sleep(1000);
 			pressButton("iPhone video backarrow");	
@@ -169,7 +172,7 @@ public class AbstractMethods extends IOSLaunch {
 			System.out.println("SWIPE");
 			int j=0;
 			while(j<i){
-				driver.swipe(225,425,225,250,1000);
+				driver.swipe(225,430,225,250,1000);
 				j++;
 			}
 			i++;

@@ -7,8 +7,8 @@
             "accounts": {
                 "stage": [
                     {
-                        "username": "qay1210_118886008@att.net",
-                        "password": "test1ng",
+                        "username": "attsta42@att.net",
+                        "password": "testing42",
                         "authz-resources": [
                             "fs1",
                             "fs2",
@@ -84,8 +84,8 @@
                 ],
                 "prod": [
                     {
-                        "username": "attsta42@att.net",
-                        "password": "testing42",
+                        "username": "qay1210_118886008@att.net",
+                        "password": "test1ng",
                         "authz-resources": [
                             "none"
                         ],
