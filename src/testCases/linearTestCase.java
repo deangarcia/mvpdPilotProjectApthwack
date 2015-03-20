@@ -1,16 +1,9 @@
 package testCases;
 
-
-
 import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
-
 import driver.IOSLaunch;
+
 
 public class linearTestCase extends IOSLaunch
 {

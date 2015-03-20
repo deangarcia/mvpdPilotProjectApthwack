@@ -1,23 +1,19 @@
 package testCases;
 
 import io.appium.java_client.ios.IOSDriver;
-
 import java.io.IOException;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
-
 import driver.IOSLaunch;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.remote.Augmenter;
+
 
 public class AbstractMethods extends IOSLaunch {
 	private String video_xpath = "//UIAApplication[1]/UIAWindow[1]/UIACollectionView[2]/"
@@ -64,7 +60,7 @@ public class AbstractMethods extends IOSLaunch {
 	
 	private void  takescreenshots(String xpath) throws InterruptedException {
 		
-		tap(waitForElementXpath(xpath,60));
+		//tap(waitForElementXpath(xpath,60));
 		driver = (IOSDriver) new Augmenter().augment(driver);
 		Thread.sleep(3000);
 		// Get the screenshot
@@ -131,7 +127,7 @@ public class AbstractMethods extends IOSLaunch {
 			  driver.swipe(225,500,225,250,3000);
 			  waitForElementXpath("//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/"
 			  		+ "UIAWebView[1]/UIAButton[1]",15).isEnabled();
-		}catch (Exception e){
+		} catch (Exception e) {
 			return true;
 		}
 		
@@ -162,12 +158,12 @@ public class AbstractMethods extends IOSLaunch {
 			//xpath = video_xpath+"["+i+"]"+"/UIAStaticText[3]";
 			//name = driver.findElementByXPath(xpath).getText();
 			tap(ele);
-			//takescreenshots(xpath);
-			Thread.sleep(20000);
+			takescreenshots(xpath);
+			Thread.sleep(15000);
 			pressButton("btn play");
 			Thread.sleep(500);
 			pressButton("iPhone video backarrow");	
-			Thread.sleep(20000);	
+			Thread.sleep(15000);	
 			System.out.println("SWIPE");
 			int j=0;
 			while(j<i){

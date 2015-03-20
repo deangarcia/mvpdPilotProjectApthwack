@@ -2,19 +2,12 @@ package driver;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
-
-import java.io.FileReader;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Properties;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.remote.CapabilityType;
-
 import testCases.MVPD;
 import testCases.jsonRead;
 
