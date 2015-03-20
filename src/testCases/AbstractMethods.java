@@ -16,6 +16,7 @@ import org.openqa.selenium.remote.Augmenter;
 
 
 public class AbstractMethods extends IOSLaunch {
+	
 	private String video_xpath = "//UIAApplication[1]/UIAWindow[1]/UIACollectionView[2]/"
 			+ "UIACollectionCell[1]/UIACollectionView[1]/UIACollectionCell";
 	private WebElement ele_ = driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAStaticText[1]"));
@@ -48,8 +49,7 @@ public class AbstractMethods extends IOSLaunch {
 	private void pressButton(String name){
 		while (!(ele_.isDisplayed())) {
 			driver.tap(1, 290, 210, 1);
-			WebElement ele = waitForElementName(name,15);
-			tap(ele);
+			tap( waitForElementName(name,15));	
 			break;
 		}
 		
@@ -62,7 +62,7 @@ public class AbstractMethods extends IOSLaunch {
 		
 		//tap(waitForElementXpath(xpath,60));
 		driver = (IOSDriver) new Augmenter().augment(driver);
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 		// Get the screenshot
 		File scrFile = ((TakesScreenshot) driver)
 				.getScreenshotAs(OutputType.FILE);
@@ -71,6 +71,7 @@ public class AbstractMethods extends IOSLaunch {
 
 			File calsspathRoot = new File(System.getProperty("user.dir")); 
 			//workspace space is set in application folder
+			
 			File testScreenShot = new File(calsspathRoot + "screenShots", "preRollAds");
 			// Copy the file to screenshot folder
 			FileUtils.copyFile(scrFile, testScreenShot);
@@ -159,15 +160,14 @@ public class AbstractMethods extends IOSLaunch {
 			//name = driver.findElementByXPath(xpath).getText();
 			tap(ele);
 			takescreenshots(xpath);
-			Thread.sleep(15000);
-			pressButton("btn play");
-			Thread.sleep(500);
+			Thread.sleep(9000);
+			//pressButton("btn play");
 			pressButton("iPhone video backarrow");	
-			Thread.sleep(15000);	
+			Thread.sleep(3000);	
 			System.out.println("SWIPE");
 			int j=0;
 			while(j<i){
-				driver.swipe(225,435,225,250,1000);
+				driver.swipe(225,440,225,250,1000);
 				j++;
 			}
 			i++;

@@ -56,7 +56,7 @@ public class jsonRead extends IOSLaunch {
 		    }
 		    
 		} catch (Exception e){
-		        	System.out.println(e.getStackTrace().toString());
+		        	//System.out.println(e.getStackTrace().toString());
 		}
 		 
 	}
