@@ -163,16 +163,15 @@ public class AbstractMethods extends IOSLaunch {
 			//name = driver.findElementByXPath(xpath).getText();
 			tap(ele);
 			//takescreenshots(xpath);
-			Thread.sleep(50000);
+			Thread.sleep(20000);
 			pressButton("btn play");
-			Thread.sleep(1000);
+			Thread.sleep(500);
 			pressButton("iPhone video backarrow");	
-			Thread.sleep(30000);
-			
+			Thread.sleep(20000);	
 			System.out.println("SWIPE");
 			int j=0;
 			while(j<i){
-				driver.swipe(225,430,225,250,1000);
+				driver.swipe(225,435,225,250,1000);
 				j++;
 			}
 			i++;
